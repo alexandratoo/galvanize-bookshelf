@@ -42,7 +42,7 @@ router.get('/books', function(req, res){
     let id = req.params.id
     knex('books')
        .where('id', id)
-      .returning('*')
+      .returning(['*'])
        .update({
          'title': req.body.title,
          'author': req.body.author,
@@ -54,12 +54,15 @@ router.get('/books', function(req, res){
           res.send(humps.camelizeKeys(data[0]));
       })
  });
-router.delete('books/:id', (req, res) => {
-  let id = req.params.id
-  knex('books').del().where('id', id).returning('*').then((data) => {
-    delete data[0].id;
-    res.send(humps.camelizeKeys(data[0]));
-  });
-
+ router.delete('/books/:id', (req, res, next) => {
+let id = req.params.id
+  knex('books')
+    .returning(['title', 'author', 'genre', 'description', 'cover_url'])
+    .where('id', id)
+    .del()
+    .then(data => {
+      res.send(humps.camelizeKeys(data[0]));
+    });
 });
+
   module.exports = router;
