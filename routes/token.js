@@ -53,11 +53,11 @@ router.post('/token', (req, res, next) => {
                 next(err);
               });
           } else {
-            next(boom.create(400, 'Bad email or password'));
+            next(boom.create(400, 'Error'));
           }
         });
       } else {
-        next(boom.create(400, 'Bad email or password'));
+        next(boom.create(400, 'Error'));
       }
     })
     .catch(err => {
