@@ -1,3 +1,4 @@
+
 'use strict';
 
 const express = require('express');
@@ -7,8 +8,7 @@ const router = express.Router();
 
 // YOUR CODE HERE
 exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('favorites').del()
+return knex('favorites').del()
     .then(function () {
       return Promise.all([
         knex('favorites').insert([{
