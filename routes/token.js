@@ -4,14 +4,14 @@ const express = require('express');
 const knex = require('../knex');
 const boom = require('boom');
 const jwt = require('jsonwebtoken');
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 const { camelizeKeys, decamelizeKeys } = require('humps');
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
 router.get('/token', (req, res, next) => {
-  // Tests if a Cookie exists, if not; send a false.
+
   if (!req.cookies.token) {
     res.status(200).send(false);
   } else {

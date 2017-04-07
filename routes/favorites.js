@@ -5,7 +5,7 @@ const express = require('express');
 // eslint-disable-next-line new-cap
 
 // YOUR CODE HERE
-const knex = require('../knex');
+ const knex = require('../knex');
  const humps = require('humps');
  const cookieParser = require('cookie-parser')
  const cookieSession = require('cookie-session')
@@ -15,8 +15,7 @@ const knex = require('../knex');
   // eslint-disable-next-line new-cap
   const router = express.Router();
 
-
- router.get('/', (req, res) => {
+  router.get('/', (req, res) => {
     if (!req.cookies.token) {
        res.status(401).type('text/plain').send('Unauthorized')
     } else {
