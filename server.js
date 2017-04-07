@@ -32,7 +32,7 @@ const path = require('path');
 
 app.use(express.static(path.join('public')));
 
-// CSRF protection
+
 app.use((req, res, next) => {
   if (/json/.test(req.get('Accept'))) {
     return next();
@@ -47,8 +47,7 @@ const token = require('./routes/token');
 const users = require('./routes/users');
 
 app.use(books);
-app.use(favorites);
-app.use(token);
+app.use('/token', token);
 app.use(users);
 app.use('/favorites', favorites);
 app.use((_req, res) => {
