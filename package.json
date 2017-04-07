@@ -28,7 +28,9 @@
   "homepage": "https://github.com/gschool/galvanize-bookshelf#readme",
   "dependencies": {
     "bcrypt": "^1.0.2",
+    "bcrypt-nodejs": "0.0.3",
     "bcrypt-as-promised": "^1.1.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.15.2",
     "boom": "^3.2.2",
     "cookie-parser": "^1.4.3",
@@ -38,7 +40,9 @@
     "jsonwebtoken": "^7.3.0",
     "knex": "^0.11.7",
     "morgan": "^1.7.0",
-    "pg": "^6.0.0"
+    "node-gyp": "^3.6.0",
+    "pg": "^6.0.0",
+    "sqlite3": "^3.1.8"
   },
   "devDependencies": {
     "chai": "^3.5.0",
