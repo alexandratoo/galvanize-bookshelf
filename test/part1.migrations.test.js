@@ -4,7 +4,11 @@
 
 process.env.NODE_ENV = 'test';
 
-const assert = require('chai').assert;
+const chai = require('chai')
+chai.use(require('chai-http'))
+const app = require('../app')
+const expect = require('chai').expect
+
 const { suite, test } = require('mocha');
 const knex = require('../knex');
 
