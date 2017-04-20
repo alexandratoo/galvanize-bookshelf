@@ -2,7 +2,7 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/galvanize-bookshelf'},
+    connection: 'postgres://localhost/bookshelf_dev'},
 
   test: {
     client: 'pg',

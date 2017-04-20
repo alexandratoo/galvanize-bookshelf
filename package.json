@@ -57,6 +57,6 @@
     "supertest": "^1.2.0"
   },
   "engines": {
-    "node": "7.7.2"
+    "node": "v7.7.2"
   }
 }
