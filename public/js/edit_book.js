@@ -19,7 +19,7 @@
   };
 
   const attachListeners = function(book) {
-    // eslint-disable-next-line max-statements
+  
     $('#editBookForm').submit((event) => {
       event.preventDefault();
 
